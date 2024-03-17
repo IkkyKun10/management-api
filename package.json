@@ -11,6 +11,9 @@
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
   },
+  "ts-standard": {
+    "project": "./tsconfig.json"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
