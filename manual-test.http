@@ -1,0 +1,139 @@
+### REGISTER user
+
+POST http://localhost:5000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "kiki",
+  "password": "password",
+  "name": "rizki"
+}
+
+### Login User
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "kiki",
+  "password": "password baru"
+}
+
+### GET User
+GET http://localhost:5000/api/users/current
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### LOGOUT User
+DELETE http://localhost:5000/api/users/current
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### UPDATE User
+PATCH http://localhost:5000/api/users/current
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+{
+  "name": "Riezki Maisyar"
+}
+
+### UPDATE User password
+PATCH http://localhost:5000/api/users/current
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+{
+  "password": "password baru"
+}
+
+### CREATE CONTACT
+POST http://localhost:5000/api/contacts
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+{
+  "first_name": "riekzi maisyar",
+  "last_name": "main",
+  "email": "kiki@gmail.com",
+  "phone": "123456"
+}
+
+### UPDATE CONTACT
+PUT http://localhost:5000/api/contacts/157
+Content-Type: application/json
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+{
+  "first_name": "riezki",
+  "last_name": "maisyar",
+  "email": "kiki@gmail.com",
+  "phone": "123456"
+}
+
+### GET CONTACT
+GET http://localhost:5000/api/contacts/157
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### DELETE CONTACT
+DELETE http://localhost:5000/api/contacts/157
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+
+### SEARCH CONTACT
+GET http://localhost:5000/api/contacts?name=maisyar
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### CREATE ADDRESS
+POST http://localhost:5000/api/contacts/157/addresses
+Accept: application/json
+Content-Type: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+
+{
+  "street": "Jalan 2",
+  "city": "Lhong",
+  "postal_code": "123",
+  "province": "aceh",
+  "country": "IDN"
+}
+
+
+### GET ADDRESS
+GET http://localhost:5000/api/contacts/157/addresses/73
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### UPDATE ADDRESS
+PUT http://localhost:5000/api/contacts/157/addresses/73
+Accept: application/json
+Content-Type: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+
+{
+  "street": "Jalan Update",
+  "city": "Lhong",
+  "postal_code": "123",
+  "province": "aceh",
+  "country": "IDN"
+}
+
+### LIST ADDRESS
+GET http://localhost:5000/api/contacts/157/addresses
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae
+
+### REMOVE ADDRESS
+DELETE http://localhost:5000/api/contacts/157/addresses/73
+Accept: application/json
+X-API-TOKEN: 322ad48f-553f-4a1b-a79f-201cb4e6beae

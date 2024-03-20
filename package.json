@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand",
+    "build": "tsc",
+    "migrate-dev": "npx prisma migrate dev",
+    "generate": "npx prisma generate",
+    "start-dev": "node dist/main.js"
   },
   "jest": {
     "transform": {
